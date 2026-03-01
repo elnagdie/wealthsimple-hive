@@ -1,13 +1,26 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import { PersonaType } from '@/data/personas';
+import { PersonaProvider } from '@/context/PersonaContext';
+import Onboarding from '@/pages/Onboarding';
+import Dashboard from '@/pages/Dashboard';
 
 const Index = () => {
+  const [phase, setPhase] = useState<'onboarding' | 'dashboard'>('onboarding');
+  const [persona, setPersona] = useState<PersonaType>('priya');
+
+  const handleOnboardingComplete = (p: PersonaType) => {
+    setPersona(p);
+    setPhase('dashboard');
+  };
+
+  if (phase === 'onboarding') {
+    return <Onboarding onComplete={handleOnboardingComplete} />;
+  }
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <PersonaProvider initial={persona}>
+      <Dashboard />
+    </PersonaProvider>
   );
 };
 
