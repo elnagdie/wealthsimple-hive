@@ -1,6 +1,7 @@
 import { usePersona } from '@/context/PersonaContext';
 import HeaderBar from '@/components/dashboard/HeaderBar';
 import RecommendationCard from '@/components/dashboard/RecommendationCard';
+import AskHive from '@/components/dashboard/AskHive';
 import ReasoningPanel from '@/components/dashboard/ReasoningPanel';
 import AccountCards from '@/components/dashboard/AccountCards';
 import SpendingBreakdown from '@/components/dashboard/SpendingBreakdown';
@@ -16,6 +17,7 @@ const Dashboard = () => {
       <HeaderBar />
       <main className="max-w-[1200px] mx-auto px-6 py-8 space-y-8">
         <RecommendationCard data={data} />
+        <AskHive data={data} />
         <ReasoningPanel data={data} />
         <AccountCards data={data} />
         <SpendingBreakdown data={data} />

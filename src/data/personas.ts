@@ -119,6 +119,9 @@ export interface PersonaData {
   categorizationAccuracy: string;
   incomePrediction: string;
   missedObligations: string;
+
+  // Ask Hive
+  askHiveChips: { question: string; response: string }[];
 }
 
 export const priyaData: PersonaData = {
@@ -255,6 +258,74 @@ Adjusted for week 1 (income already received): ~$340`,
   categorizationAccuracy: '94.2% accurate (18 corrections / 312 transactions)',
   incomePrediction: '±11% (predicted $3,800, actuals $3,200 – $4,600)',
   missedObligations: '0',
+
+  askHiveChips: [
+    {
+      question: 'Can I afford new camera gear ($800)?',
+      response: `Looking at your current position: you have $4,850 in chequing,
+$340 safe to allocate this week, and rent ($1,650) is due in 4 days.
+
+Short answer: yes, but with a trade-off.
+
+If you buy the gear now, your safe-to-allocate drops to $0 for
+the next 2 weeks, and I'd recommend pausing your TFSA contribution
+this period. Your emergency fund stays untouched at $5,400.
+
+Alternatively: split it — $400 now, $400 after your next income
+deposit. This keeps your TFSA contribution on track.
+
+This is based on your current balances and conservative income
+estimate. Not financial advice.`,
+    },
+    {
+      question: 'How much did I spend on food this month?',
+      response: `In February, you spent $620 on Food & Dining — that's up 18%
+from your 3-month average of $525.
+
+Breakdown:
+  Uber Eats: $186 (10 orders)
+  Metro Grocery: $298 (4 trips)
+  Restaurants: $136 (3 visits)
+
+The Uber Eats spending is driving the increase. At your current
+pace, you'd spend ~$680 in March. Cutting 3 Uber Eats orders
+would save ~$55 and bring you back to your average.`,
+    },
+    {
+      question: 'When should I start contributing to my RRSP?',
+      response: `Right now, your TFSA is the better priority — and here's why.
+
+At ~$62K income, most of your earnings fall in the 14% federal
+bracket. RRSP contributions only save you 14 cents per dollar at
+this rate. TFSA gives you tax-free growth AND tax-free withdrawals
+with no income restriction.
+
+When to switch: if your income crosses ~$58,523 consistently
+(the 20.5% bracket threshold), RRSP starts to become more
+valuable. Based on your 6-month trend, you're close — if your
+brand deal income keeps growing, we might revisit this by Q3.
+
+For now: max your TFSA ($4,200 room left), maintain your
+emergency fund, then consider RRSP with any surplus.`,
+    },
+    {
+      question: 'How much have I earned from brand deals this year?',
+      response: `In 2026 so far (Jan 1 – Mar 1), your brand deal income totals
+$8,400 across 4 deals:
+
+  Sephora (Feb 20): $2,500
+  Aritzia (Feb 3): $3,200
+  Olay (Jan 18): $1,500
+  Dyson (Jan 8): $1,200
+
+Your TikTok Creator Fund added $2,100 and Canva template
+sales added $840, bringing your total 2026 income to $11,340.
+
+At this pace, you're trending toward ~$68K for the year —
+which would push more of your income into the 20.5% bracket.
+I'll flag if RRSP contributions become more advantageous.`,
+    },
+  ],
 };
 
 export const marcusData: PersonaData = {
@@ -385,6 +456,81 @@ Adjusted for recent spending patterns:        $558`,
   categorizationAccuracy: '96.8% accurate (8 corrections / 250 transactions)',
   incomePrediction: '±2% (steady salary — minimal variance)',
   missedObligations: '0',
+
+  askHiveChips: [
+    {
+      question: 'Am I on track to max my TFSA?',
+      response: `Yes — you're in great shape.
+
+You've contributed $3,500 of your $7,000 limit this year.
+At your current rate of $208/payday (every 2 weeks), you'll
+contribute another $5,408 by December — more than enough.
+
+You're on track to max your TFSA by June. After that, I'll
+automatically redirect recommendations to your RRSP, where
+you have $12,900 of room remaining.`,
+    },
+    {
+      question: 'Can I afford a $3,000 vacation in June?',
+      response: `Yes, comfortably.
+
+Between now and June (13 pay periods), your total safe-to-
+allocate is projected at ~$7,254. After maintaining your current
+RRSP ($350/pay) and TFSA ($208/pay) contributions, you'd have
+approximately $0 surplus — because your allocation is optimized.
+
+Two options:
+1. Reduce TFSA to $100/pay for 6 periods → saves $648,
+   then reduce RRSP to $250/pay for 6 periods → saves $600.
+   Total: $1,248 saved. You'd need to cover $1,752 from
+   your emergency fund surplus ($700 above target).
+
+2. Better option: set a $3,000 vacation goal now. I'll
+   adjust your allocation to save $231/pay over 13 periods.
+   Your TFSA maxes in August instead of June. RRSP takes
+   a small pause. No emergency fund impact.
+
+Want me to set up Option 2?`,
+    },
+    {
+      question: 'Should I increase my RRSP contributions?',
+      response: `At your income ($95K), RRSP is already your top priority —
+and you're doing well.
+
+Currently contributing $350/payday to RRSP. At your combined
+30.5% marginal rate (20.5% federal + 10% Alberta), every $100
+extra saves you $30.50 in taxes.
+
+You have $12,900 of RRSP room remaining. Increasing to $500/pay
+would use an extra $3,900 by year-end and save ~$1,190 in taxes.
+
+Trade-off: your TFSA would take longer to max (September vs June).
+Since your emergency fund is fully funded, there's no downside
+to shifting more toward RRSP — the tax savings are real.
+
+My recommendation: increase RRSP to $450/pay after your TFSA
+maxes in June. Best of both worlds.`,
+    },
+    {
+      question: 'How much did I spend vs last month?',
+      response: `February total spending: $4,500
+January total spending: $4,180
+Difference: +$320 (7.7% increase)
+
+Biggest changes:
+  Food & Dining: $580 → up from $490 (+18%)
+  Shopping: $320 → up from $180 (+78%) — Amazon & Canadian Tire
+  Entertainment: $280 → up from $200 (+40%)
+
+Decreases:
+  Transportation: $520 → down from $580 (-10%)
+  Utilities: $180 → same
+
+The shopping spike is the main driver. Two Amazon orders ($89 +
+$156) and the Canadian Tire purchase ($67) account for most of it.
+Your housing costs are stable as expected.`,
+    },
+  ],
 };
 
 export const CATEGORIES = [
