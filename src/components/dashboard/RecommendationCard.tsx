@@ -43,9 +43,9 @@ const RecommendationCard = ({ data }: Props) => {
               </span>
               <span className="flex items-center gap-1">
                 Confidence: {data.confidence}
-                <span className="flex gap-0.5 ml-1">
+                <span className="flex gap-1 ml-1">
                   {[1, 2, 3].map((i) => (
-                    <span key={i} className={`w-2 h-2 rounded-full ${i <= data.confidenceDots ? 'bg-foreground' : 'bg-border'}`} />
+                    <span key={i} className={`w-2 h-2 rounded-full ${i <= data.confidenceDots ? 'bg-primary' : 'bg-border'}`} />
                   ))}
                 </span>
               </span>
@@ -100,7 +100,7 @@ const RecommendationCard = ({ data }: Props) => {
                       <span>⚠️ {ob.name}</span>
                       {ob.warningNote && <span className="text-xs text-muted-foreground ml-2">— {ob.warningNote}</span>}
                     </TooltipTrigger>
-                    <TooltipContent className="max-w-xs text-xs">{ob.tooltipText}</TooltipContent>
+                    <TooltipContent className="max-w-[280px] text-xs bg-foreground text-primary-foreground rounded-lg px-4 py-3">{ob.tooltipText}</TooltipContent>
                   </Tooltip>
                 ) : (
                   <span>{ob.name}</span>
@@ -116,8 +116,8 @@ const RecommendationCard = ({ data }: Props) => {
         </div>
 
         {/* C) Recommendation */}
-        <div className="bg-primary/5 rounded-lg p-6 mb-6">
-          <p className="text-4xl font-bold text-primary mb-1">
+        <div className="bg-primary/10 rounded-lg p-6 mb-6">
+          <p className="text-[40px] font-semibold text-primary mb-1 leading-tight">
             <AnimatedNumber value={data.safeToAllocate} />
             <span className="text-lg font-normal text-foreground ml-2">safe to allocate{data.incomeType === 'variable' ? ' this week' : ''}</span>
           </p>
@@ -148,11 +148,11 @@ const RecommendationCard = ({ data }: Props) => {
         <div className="flex items-center gap-3">
           <button
             onClick={() => setShowConfirmModal(true)}
-            className="px-6 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity"
+            className="px-6 py-3 bg-primary text-primary-foreground rounded-[10px] font-semibold hover:opacity-90 transition-opacity"
           >
             Move ${data.safeToAllocate} →
           </button>
-          <button className="px-6 py-2.5 border border-border text-foreground rounded-lg font-medium hover:bg-secondary transition-colors">
+          <button className="px-6 py-3 border-[1.5px] border-foreground text-foreground rounded-[10px] font-medium hover:bg-secondary transition-colors">
             Adjust amounts
           </button>
         </div>
@@ -165,14 +165,15 @@ const RecommendationCard = ({ data }: Props) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-foreground/50 flex items-center justify-center z-50"
+            className="fixed inset-0 flex items-center justify-center z-50"
+            style={{ backgroundColor: 'rgba(50,48,47,0.4)', backdropFilter: 'blur(4px)' }}
             onClick={() => setShowConfirmModal(false)}
           >
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
+              initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-card rounded-xl p-8 max-w-md w-full mx-4 shadow-xl"
+              exit={{ scale: 0.95, opacity: 0 }}
+              className="bg-card rounded-2xl p-8 max-w-[480px] w-full mx-4 shadow-sm"
               onClick={(e) => e.stopPropagation()}
             >
               <h2 className="text-xl font-semibold text-foreground mb-2">Confirm Transfer — This is where you decide.</h2>
@@ -185,13 +186,13 @@ const RecommendationCard = ({ data }: Props) => {
               <div className="flex gap-3">
                 <button
                   onClick={() => setShowConfirmModal(false)}
-                  className="flex-1 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium"
+                  className="flex-1 py-3 bg-primary text-primary-foreground rounded-[10px] font-semibold"
                 >
                   Confirm
                 </button>
                 <button
                   onClick={() => setShowConfirmModal(false)}
-                  className="flex-1 py-2.5 bg-secondary text-secondary-foreground rounded-lg font-medium"
+                  className="flex-1 py-3 border-[1.5px] border-foreground text-foreground rounded-[10px] font-medium"
                 >
                   Not right now
                 </button>

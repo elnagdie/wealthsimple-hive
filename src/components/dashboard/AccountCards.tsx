@@ -9,7 +9,7 @@ interface Props {
 const AccountCards = ({ data }: Props) => {
   return (
     <div>
-      <h2 className="text-lg font-semibold text-foreground mb-4">Registered Accounts</h2>
+      <h2 className="text-xl font-semibold text-foreground mb-4">Registered Accounts</h2>
       <div className="grid grid-cols-4 gap-4">
         {data.accounts.map((acc) => (
           <motion.div
@@ -29,7 +29,7 @@ const AccountCards = ({ data }: Props) => {
 
             {/* Progress bar */}
             {acc.status !== 'inactive' && (
-              <div className="w-full h-2 bg-secondary rounded-full mb-3">
+              <div className="w-full h-2 rounded-full mb-3" style={{ backgroundColor: '#F0F0EE' }}>
                 <div
                   className={`h-full rounded-full transition-all ${
                     acc.status === 'maxed' || acc.status === 'complete'

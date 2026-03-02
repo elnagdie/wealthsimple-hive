@@ -21,7 +21,7 @@ const ConnectAccounts = ({ onContinue }: Props) => {
       <p className="text-muted-foreground mb-8">The more accounts connected, the smarter your recommendations.</p>
 
       {/* Open Banking Card */}
-      <div className="border border-border rounded-lg p-6 mb-4">
+      <div className="border border-border rounded-xl p-6 mb-4 bg-card">
         <div className="flex items-center gap-2 mb-4">
           <Lock className="w-4 h-4 text-primary" />
           <span className="text-sm font-medium text-foreground">Open Banking</span>
@@ -39,12 +39,12 @@ const ConnectAccounts = ({ onContinue }: Props) => {
           <>
             <button
               onClick={() => setShowModal(true)}
-              className="w-full py-2.5 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity mb-3"
+              className="w-full py-3 bg-primary text-primary-foreground rounded-[10px] font-semibold hover:opacity-90 transition-opacity mb-3"
             >
               Connect securely →
             </button>
             <p className="text-xs text-muted-foreground mb-2">Read-only access. We never see your password.</p>
-            <span className="inline-block text-xs bg-secondary text-muted-foreground px-2 py-1 rounded">
+            <span className="inline-block text-xs bg-secondary text-muted-foreground px-2 py-1 rounded-full">
               🇨🇦 Consumer-Driven Banking Act — Launching 2026
             </span>
           </>
@@ -63,7 +63,7 @@ const ConnectAccounts = ({ onContinue }: Props) => {
       </div>
 
       {/* CSV Upload */}
-      <div className="border border-dashed border-border rounded-lg p-5 mb-8">
+      <div className="border border-dashed border-border rounded-xl p-5 mb-8">
         <p className="text-sm text-muted-foreground mb-2">Or upload bank statements manually</p>
         <div className="flex items-center justify-center gap-2 py-4 text-sm text-muted-foreground">
           <Upload className="w-4 h-4" />
@@ -76,7 +76,7 @@ const ConnectAccounts = ({ onContinue }: Props) => {
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
           <button
             onClick={onContinue}
-            className="w-full py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity"
+            className="w-full py-3 bg-primary text-primary-foreground rounded-[10px] font-semibold hover:opacity-90 transition-opacity"
           >
             Continue →
           </button>
@@ -90,14 +90,15 @@ const ConnectAccounts = ({ onContinue }: Props) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-foreground/50 flex items-center justify-center z-50"
+            className="fixed inset-0 flex items-center justify-center z-50"
+            style={{ backgroundColor: 'rgba(50,48,47,0.4)', backdropFilter: 'blur(4px)' }}
             onClick={() => setShowModal(false)}
           >
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
+              initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-card rounded-xl p-8 max-w-md w-full mx-4 shadow-xl"
+              exit={{ scale: 0.95, opacity: 0 }}
+              className="bg-card rounded-2xl p-8 max-w-[480px] w-full mx-4 shadow-sm"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex items-center gap-2 mb-6">
@@ -132,13 +133,13 @@ const ConnectAccounts = ({ onContinue }: Props) => {
               <div className="flex gap-3">
                 <button
                   onClick={handleAuthorize}
-                  className="flex-1 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity"
+                  className="flex-1 py-3 bg-primary text-primary-foreground rounded-[10px] font-semibold hover:opacity-90 transition-opacity"
                 >
                   Authorize
                 </button>
                 <button
                   onClick={() => setShowModal(false)}
-                  className="flex-1 py-2.5 bg-secondary text-secondary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity"
+                  className="flex-1 py-3 border-[1.5px] border-foreground text-foreground rounded-[10px] font-medium hover:bg-secondary transition-colors"
                 >
                   Cancel
                 </button>

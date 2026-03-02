@@ -47,7 +47,7 @@ const TransactionTable = ({ data }: Props) => {
       animate={{ opacity: 1 }}
       className="bg-card rounded-xl border border-border p-6"
     >
-      <h2 className="text-lg font-semibold text-foreground mb-4">Recent Transactions</h2>
+      <h2 className="text-xl font-semibold text-foreground mb-4">Recent Transactions</h2>
 
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
@@ -82,7 +82,7 @@ const TransactionTable = ({ data }: Props) => {
                       <select
                         defaultValue=""
                         onChange={(e) => handleCategoryChange(idx, e.target.value)}
-                        className="text-xs px-2 py-1 border border-input rounded bg-background text-foreground"
+                        className="text-xs px-2 py-1 border border-input rounded bg-card text-foreground"
                         autoFocus
                       >
                         <option value="" disabled>Select category...</option>
@@ -101,10 +101,10 @@ const TransactionTable = ({ data }: Props) => {
                       </label>
                     </div>
                   ) : (
-                    <span className={`inline-block text-xs px-2 py-0.5 rounded-full font-medium ${
+                    <span className={`inline-block text-xs px-3 py-1 rounded-full font-medium ${
                       tx.category.includes('?')
-                        ? 'bg-warning/20 text-warning'
-                        : 'bg-secondary text-secondary-foreground'
+                        ? 'bg-secondary text-foreground border-[1.5px] border-warning'
+                        : 'bg-secondary text-foreground'
                     }`}>
                       {tx.category}
                     </span>

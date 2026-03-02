@@ -1,3 +1,4 @@
+import { BarChart3 } from 'lucide-react';
 import { PersonaData } from '@/data/personas';
 
 interface Props {
@@ -8,7 +9,10 @@ const TrustFooter = ({ data }: Props) => {
   return (
     <div className="space-y-6 pb-12">
       <div className="bg-card rounded-xl border border-border p-6">
-        <h2 className="text-lg font-semibold text-foreground mb-4">📊 Co-Pilot Accuracy — Last 90 Days</h2>
+        <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+          <BarChart3 className="w-5 h-5 text-muted-foreground" />
+          Co-Pilot Accuracy — Last 90 Days
+        </h2>
         <div className="grid grid-cols-3 gap-6">
           <div>
             <p className="text-sm font-medium text-foreground">Categorization</p>

@@ -6,13 +6,15 @@ const HeaderBar = () => {
 
   return (
     <header className="bg-card border-b border-border sticky top-0 z-40">
-      <div className="max-w-[1200px] mx-auto px-6 py-3 flex items-center justify-between">
+      <div className="max-w-[1080px] mx-auto px-6 py-3 flex items-center justify-between">
         {/* Left: Wordmark */}
         <div>
-          <h1 className="text-lg font-semibold text-foreground leading-tight">
-            Wealthsimple <span className="font-bold">Hive</span>
+          <h1 className="text-lg text-foreground leading-tight">
+            <span className="font-normal">wealthsimple</span>
+            <span className="text-border mx-2">|</span>
+            <span className="font-semibold">Hive</span>
           </h1>
-          <p className="text-[11px] text-muted-foreground -mt-0.5">Your AI financial co-pilot.</p>
+          <p className="text-[11px] text-muted-foreground -mt-0.5">Your AI financial co-pilot</p>
         </div>
 
         {/* Center: Persona Toggle */}
@@ -43,7 +45,7 @@ const HeaderBar = () => {
 
         {/* Right: Persona badge */}
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center text-sm font-medium text-foreground">
+          <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-sm font-medium text-foreground">
             {data.name[0]}
           </div>
           <div>
