@@ -5,16 +5,17 @@ interface Props {
   data: PersonaData;
 }
 
+/* Warm Wealthsimple-compatible palette — no blue */
 const COLORS = [
-  'hsl(145, 63%, 49%)',
-  'hsl(33, 91%, 55%)',
-  'hsl(220, 60%, 55%)',
-  'hsl(340, 65%, 55%)',
-  'hsl(280, 50%, 55%)',
-  'hsl(180, 50%, 45%)',
-  'hsl(10, 65%, 55%)',
-  'hsl(50, 60%, 50%)',
-  'hsl(220, 14%, 70%)',
+  'hsl(118, 100%, 38%)',  /* green - primary */
+  'hsl(35, 88%, 59%)',    /* amber */
+  'hsl(20, 4%, 19%)',     /* charcoal */
+  'hsl(340, 55%, 50%)',   /* warm rose */
+  'hsl(30, 60%, 50%)',    /* burnt orange */
+  'hsl(0, 0%, 60%)',      /* neutral gray */
+  'hsl(10, 65%, 55%)',    /* coral */
+  'hsl(50, 55%, 50%)',    /* olive gold */
+  'hsl(0, 0%, 75%)',      /* light gray */
 ];
 
 const SpendingBreakdown = ({ data }: Props) => {
@@ -25,7 +26,7 @@ const SpendingBreakdown = ({ data }: Props) => {
       animate={{ opacity: 1 }}
       className="bg-card rounded-xl border border-border p-6"
     >
-      <h2 className="text-lg font-semibold text-foreground mb-4">Spending Breakdown</h2>
+      <h2 className="text-xl font-semibold text-foreground mb-4">Spending Breakdown</h2>
 
       {/* Stacked bar */}
       <div className="flex rounded-lg overflow-hidden h-8 mb-6">

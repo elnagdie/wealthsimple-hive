@@ -56,7 +56,7 @@ const AskHive = ({ data }: AskHiveProps) => {
             className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-all ${
               selectedIndex === i
                 ? 'border-primary bg-primary/10 text-primary'
-                : 'border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground'
+                : 'border-border bg-secondary text-foreground hover:border-primary/40'
             }`}
           >
             {chip.question}
@@ -79,7 +79,7 @@ const AskHive = ({ data }: AskHiveProps) => {
               <Hexagon size={14} />
               Hive
             </div>
-            <pre className="whitespace-pre-wrap font-mono text-xs leading-relaxed text-foreground/90">
+            <pre className="whitespace-pre-wrap font-mono text-[13px] leading-relaxed text-foreground/90">
               {activeResponse.response}
             </pre>
           </motion.div>

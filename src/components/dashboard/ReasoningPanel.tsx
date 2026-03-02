@@ -14,7 +14,7 @@ const ReasoningPanel = ({ data }: Props) => {
     <div>
       <button
         onClick={() => setExpanded(!expanded)}
-        className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+        className="flex items-center gap-2 text-sm font-medium text-foreground underline hover:text-primary transition-colors"
       >
         See full reasoning
         <motion.div animate={{ rotate: expanded ? 180 : 0 }} transition={{ duration: 0.2 }}>
@@ -34,19 +34,19 @@ const ReasoningPanel = ({ data }: Props) => {
             <div className="mt-4 space-y-4">
               <div className="bg-card border border-border rounded-lg p-6">
                 <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-3">The Calculation Chain</h3>
-                <pre className="text-sm text-foreground font-mono whitespace-pre-wrap bg-secondary/50 rounded-lg p-4">
+                <pre className="text-[13px] text-foreground font-mono whitespace-pre-wrap bg-secondary rounded-lg p-4">
                   {data.calculationChain}
                 </pre>
               </div>
 
-              <div className="bg-warning/10 border border-warning/30 rounded-lg p-6">
+              <div className="rounded-lg p-5 border-l-[3px] border-l-warning" style={{ backgroundColor: '#FFF9ED' }}>
                 <h3 className="text-sm font-medium text-warning mb-3">What I can't see</h3>
                 <ul className="space-y-1.5">
                   {data.cantSee.map((item, i) => (
                     <li key={i} className="text-sm text-foreground">• {item}</li>
                   ))}
                 </ul>
-                <button className="mt-3 text-sm font-medium text-primary hover:underline">
+                <button className="mt-3 text-sm font-medium text-foreground underline hover:text-primary transition-colors">
                   Update my situation →
                 </button>
               </div>

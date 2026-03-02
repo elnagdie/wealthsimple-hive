@@ -37,9 +37,9 @@ const IncomeSelection = ({ selected, onSelect, onContinue }: Props) => {
           <button
             key={c.type}
             onClick={() => onSelect(c.type)}
-            className={`relative text-left p-6 rounded-lg border-2 transition-all duration-200 hover:shadow-md ${
+            className={`relative text-left p-6 rounded-xl border-2 transition-all duration-200 ${
               selected === c.type
-                ? 'border-primary bg-primary/5 shadow-md'
+                ? 'border-primary bg-primary/10'
                 : 'border-border hover:border-muted-foreground/30'
             }`}
           >
@@ -64,7 +64,7 @@ const IncomeSelection = ({ selected, onSelect, onContinue }: Props) => {
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
           <button
             onClick={onContinue}
-            className="w-full py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity"
+            className="w-full py-3 bg-primary text-primary-foreground rounded-[10px] font-semibold hover:opacity-90 transition-opacity"
           >
             Continue →
           </button>

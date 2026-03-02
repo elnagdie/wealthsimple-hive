@@ -13,9 +13,9 @@ const Dashboard = () => {
   const { data } = usePersona();
 
   return (
-    <div className="min-h-screen bg-secondary/50">
+    <div className="min-h-screen bg-background">
       <HeaderBar />
-      <main className="max-w-[1200px] mx-auto px-6 py-8 space-y-8">
+      <main className="max-w-[1080px] mx-auto px-6 py-10 space-y-12">
         <RecommendationCard data={data} />
         <AskHive data={data} />
         <ReasoningPanel data={data} />
