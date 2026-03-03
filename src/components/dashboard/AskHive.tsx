@@ -31,7 +31,8 @@ const AskHive = ({ data }: AskHiveProps) => {
   const activeResponse = selectedIndex !== null ? data.askHiveChips[selectedIndex] : null;
 
   return (
-    <div className="space-y-4">
+    <div className="bg-card rounded-xl border border-border p-6 space-y-4">
+      <h2 className="text-lg font-semibold text-foreground mb-1">Ask Hive</h2>
       {/* Input */}
       <div className="relative">
         <input

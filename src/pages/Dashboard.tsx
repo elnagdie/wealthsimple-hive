@@ -18,10 +18,10 @@ const Dashboard = () => {
       <main className="max-w-[1080px] mx-auto px-6 py-10 space-y-12">
         <RecommendationCard data={data} />
         <ReasoningPanel data={data} />
-        <AskHive data={data} />
         <AccountCards data={data} />
         <SpendingBreakdown data={data} />
         <TransactionTable data={data} />
+        <AskHive data={data} />
         <ScenarioExplorer data={data} />
         <TrustFooter data={data} />
       </main>
