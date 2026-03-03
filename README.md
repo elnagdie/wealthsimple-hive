@@ -1,73 +1,70 @@
-# Welcome to your Lovable project
+# Hive - AI Financial Co-Pilot
 
-## Project info
+**Live Demo:** [wealthsimple-hive.lovable.app](https://wealthsimple-hive.lovable.app/)
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+This project is a submission for the [Wealthsimple AI Builder](https://www.wealthsimple.com/en-ca/careers/ai-builders) role.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## What is Hive?
 
-**Use Lovable**
+Hive is an AI-powered financial co-pilot that answers the question every Canadian has: **"Can I afford to invest more right now?"**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+It analyzes a user's complete financial picture — income patterns, recurring bills, spending habits, and account balances — then delivers specific, reasoned weekly recommendations on what's safe to spend, save, and invest.
 
-Changes made via Lovable will be committed automatically to this repo.
+### The Problem
 
-**Use your preferred IDE**
+59% of Canadians don't maintain a household budget. For the 29% of knowledge workers earning variable income (freelancers, gig workers, contract employees), traditional budgeting tools are fundamentally broken — they assume a steady paycheque.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Wealthsimple's existing "Automate Your Pay" feature lets users auto-invest a fixed amount each payday, but it has no awareness of whether the user can actually afford that transfer. It doesn't know about upcoming bills. It doesn't adjust for variable income.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### The Solution
 
-Follow these steps:
+Hive fills that gap. With Canada's Open Banking framework launching in 2026, Hive leverages cross-institution transaction data to:
+
+- **Categorize transactions** automatically with AI, replacing manual spreadsheet work
+- **Detect income patterns** — steady, variable, or seasonal — with confidence intervals
+- **Surface upcoming obligations** including annual and quarterly payments users typically forget
+- **Recommend weekly allocations** across spending, saving, and investing with transparent reasoning
+- **Explore "what-if" scenarios** so users can see how different choices affect their financial trajectory
+
+## Features
+
+- **Smart Dashboard** — Account overview, spending breakdown, and AI-driven recommendations at a glance
+- **Ask Hive** — Conversational AI interface for financial questions
+- **Reasoning Panel** — Transparent explanations behind every recommendation
+- **Scenario Explorer** — Model different financial decisions before committing
+- **Guided Onboarding** — Connects accounts and learns financial context in minutes
+
+## Tech Stack
+
+- React + TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui + Radix UI
+- Recharts (data visualization)
+- Framer Motion (animations)
+
+## Getting Started
+
+Requires Node.js and npm ([install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)).
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+git clone <repo-url>
+cd wealthsimple-hive
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Documentation
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Detailed project docs are in the [`docs/`](./docs/) folder:
 
-**Use GitHub Codespaces**
+- **PRD_AI_Financial_CoPilot.md** — Full product requirements document
+- **wealthsimple_ai_builder_research.md** — Research on Wealthsimple's current landscape and gaps
+- **Lovable_Prompt_AI_CoPilot.md** — AI prompting strategy
+- **Lovable_Styling_Prompt.md** — Design and styling guidelines
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Author
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+**Esraa Elnagdi**
