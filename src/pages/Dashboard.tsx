@@ -17,8 +17,8 @@ const Dashboard = () => {
       <HeaderBar />
       <main className="max-w-[1080px] mx-auto px-6 py-10 space-y-12">
         <RecommendationCard data={data} />
-        <AskHive data={data} />
         <ReasoningPanel data={data} />
+        <AskHive data={data} />
         <AccountCards data={data} />
         <SpendingBreakdown data={data} />
         <TransactionTable data={data} />
